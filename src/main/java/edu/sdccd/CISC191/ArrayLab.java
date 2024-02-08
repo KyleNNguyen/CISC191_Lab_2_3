@@ -27,7 +27,14 @@ public class ArrayLab {
      * @return the maximum value in the 2d parameter array a
      */
     public static int max(int[][] a) {
-        return 0;
+        int max = a[0][0];
+        for(int[] row: a) {
+            for(int cell: row) {
+                if(cell > max)
+                    max = cell;
+            }
+        }
+        return max;
     }
 
     /**
