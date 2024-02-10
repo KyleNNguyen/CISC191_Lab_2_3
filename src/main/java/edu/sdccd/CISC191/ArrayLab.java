@@ -82,10 +82,22 @@ public class ArrayLab {
     }
 
     /**
+     * adds all numbers in each row
      * @param a 2D array
      * @return calculates the row sum for every row and returns each of the values in an array. Index i of the return array contains the sum of elements in row i.
      */
     public static int[] allRowSums(int[][] a) {
-        return new int[]{0};
+        //stores the sums of each row
+       int[] allSums = new int[a.length];
+       //go thru each row and find the sum of it
+        for(int i=0; i<a.length; i++){
+            int oneRowSum = 0;
+            for(int cell: a[i]){
+                oneRowSum += cell;
+            }
+            //add to the sums of each row
+            allSums[i] = oneRowSum;
+        }
+        return allSums;
     }
 }
