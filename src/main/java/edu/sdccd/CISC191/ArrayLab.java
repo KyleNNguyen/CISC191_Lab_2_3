@@ -23,11 +23,19 @@ public class ArrayLab {
     }
 
     /**
+     * finds the greatest number
+     * in the 2d array
      * @param a 2D array
-     * @return the maximum value in the 2d parameter array a
+     * @return the maximum value in
+     * the 2d parameter array a
      */
     public static int max(int[][] a) {
+        //set initial max value to the first
+        //value in array
         int max = a[0][0];
+        //go thru each index and compare to
+    // see if the value is greater than
+    //previous
         for(int[] row: a) {
             for(int cell: row) {
                 if(cell > max)
@@ -37,13 +45,23 @@ public class ArrayLab {
         return max;
     }
 
+
     /**
+     * adds up all the numbers in a row
      * @param a 2D array
      * @param x row index
      * @return the sum of the elements in Row x of a
      */
     public static int rowSum(int[][] a, int x) {
-        return 0;
+        int sumRows = 0;
+        //check if x is in the bounds of a
+        if(x<a.length){
+            //add each value in that row
+           for(int i=0; i<a[x].length; i++){
+               sumRows+= a[x][i];
+                }
+            }
+        return sumRows;
     }
 
     /**
@@ -52,7 +70,15 @@ public class ArrayLab {
      * @return the sum of the elements in Column x of a (careful with rows of different lengths!)
      */
     public static int columnSum(int[][] a, int x) {
-        return 0;
+        int sumCols = 0;
+        //go thru each row and see if x is in bounds
+        for (int[] row : a) {
+            if (x < row.length) {
+                //add all values in that colum
+                sumCols += row[x];
+            }
+        }
+        return sumCols;
     }
 
     /**
